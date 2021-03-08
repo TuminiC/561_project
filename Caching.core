@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="ASCII"?>
+<core:COREConcern xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://cs.mcgill.ca/sel/core/2.0" xmi:id="_HGvN4Hu7EeujD-aVJQt_jA" name="Caching" models="_HGvN4Xu7EeujD-aVJQt_jA _YtY3UHvCEeujD-aVJQt_jA">
+  <featureModel xmi:id="_HGvN4Xu7EeujD-aVJQt_jA" coreConcern="_HGvN4Hu7EeujD-aVJQt_jA" root="_HGvN4nu7EeujD-aVJQt_jA">
+    <features xmi:id="_HGvN4nu7EeujD-aVJQt_jA" name="Caching" children="_MzqswHvBEeujD-aVJQt_jA _3eYRkHu9EeujD-aVJQt_jA _wXgVgHu9EeujD-aVJQt_jA _ZXxYcHu_EeujD-aVJQt_jA"/>
+    <features xmi:id="_T3QTAHu7EeujD-aVJQt_jA" name="RemoteCaching" parent="_3eYRkHu9EeujD-aVJQt_jA" parentRelationship="OR"/>
+    <features xmi:id="_evjAUHu9EeujD-aVJQt_jA" name="OnDiskCaching" parent="_3eYRkHu9EeujD-aVJQt_jA" parentRelationship="OR"/>
+    <features xmi:id="_gJ1NAHu9EeujD-aVJQt_jA" name="InRAMCaching" parent="_3eYRkHu9EeujD-aVJQt_jA" parentRelationship="OR"/>
+    <features xmi:id="_wXgVgHu9EeujD-aVJQt_jA" name="CacheExpiry" children="_RsZdoHu-EeujD-aVJQt_jA _WoSv4Hu-EeujD-aVJQt_jA" parent="_HGvN4nu7EeujD-aVJQt_jA" parentRelationship="Optional"/>
+    <features xmi:id="_3eYRkHu9EeujD-aVJQt_jA" name="CacheType" children="_gJ1NAHu9EeujD-aVJQt_jA _evjAUHu9EeujD-aVJQt_jA _T3QTAHu7EeujD-aVJQt_jA" parent="_HGvN4nu7EeujD-aVJQt_jA" parentRelationship="Mandatory"/>
+    <features xmi:id="_GJjskHu-EeujD-aVJQt_jA" name="WriteThroughCache" parent="_xCaMUHvAEeujD-aVJQt_jA" parentRelationship="XOR"/>
+    <features xmi:id="_RsZdoHu-EeujD-aVJQt_jA" name="GarbageCollector" parent="_wXgVgHu9EeujD-aVJQt_jA" parentRelationship="XOR"/>
+    <features xmi:id="_WoSv4Hu-EeujD-aVJQt_jA" name="OnDemandPruning" parent="_wXgVgHu9EeujD-aVJQt_jA" parentRelationship="XOR"/>
+    <features xmi:id="_ZXxYcHu_EeujD-aVJQt_jA" name="CoherenceStrategy" children="_xCaMUHvAEeujD-aVJQt_jA _0GSNAHvAEeujD-aVJQt_jA" parent="_HGvN4nu7EeujD-aVJQt_jA" parentRelationship="Mandatory"/>
+    <features xmi:id="_eBofgHu_EeujD-aVJQt_jA" name="ReadThrough" parent="_0GSNAHvAEeujD-aVJQt_jA" parentRelationship="XOR"/>
+    <features xmi:id="_iGRZoHu_EeujD-aVJQt_jA" name="WriteBehind" parent="_xCaMUHvAEeujD-aVJQt_jA" parentRelationship="XOR"/>
+    <features xmi:id="_xCaMUHvAEeujD-aVJQt_jA" name="WriteStrategy" children="_GJjskHu-EeujD-aVJQt_jA _iGRZoHu_EeujD-aVJQt_jA" parent="_ZXxYcHu_EeujD-aVJQt_jA" parentRelationship="Mandatory"/>
+    <features xmi:id="_0GSNAHvAEeujD-aVJQt_jA" name="ReadStrategy" children="_eBofgHu_EeujD-aVJQt_jA _7clFIHvAEeujD-aVJQt_jA" parent="_ZXxYcHu_EeujD-aVJQt_jA" parentRelationship="Mandatory"/>
+    <features xmi:id="_7clFIHvAEeujD-aVJQt_jA" name="ReadAhead" parent="_0GSNAHvAEeujD-aVJQt_jA" parentRelationship="XOR"/>
+    <features xmi:id="_MzqswHvBEeujD-aVJQt_jA" name="CacheSize" children="_POlQAHvBEeujD-aVJQt_jA" parent="_HGvN4nu7EeujD-aVJQt_jA" parentRelationship="Optional"/>
+    <features xmi:id="_POlQAHvBEeujD-aVJQt_jA" name="InvalidationStrategy" children="_VLvK8HvBEeujD-aVJQt_jA _l0aNYHvBEeujD-aVJQt_jA _qfFMwHvBEeujD-aVJQt_jA" parent="_MzqswHvBEeujD-aVJQt_jA" parentRelationship="Optional"/>
+    <features xmi:id="_VLvK8HvBEeujD-aVJQt_jA" name="LRUCaching" parent="_POlQAHvBEeujD-aVJQt_jA" parentRelationship="XOR"/>
+    <features xmi:id="_l0aNYHvBEeujD-aVJQt_jA" name="LFUCaching" parent="_POlQAHvBEeujD-aVJQt_jA" parentRelationship="XOR"/>
+    <features xmi:id="_qfFMwHvBEeujD-aVJQt_jA" name="MRUCaching" parent="_POlQAHvBEeujD-aVJQt_jA" parentRelationship="XOR"/>
+  </featureModel>
+  <impactModel xmi:id="_YtY3UHvCEeujD-aVJQt_jA" name="Impact Model" coreConcern="_HGvN4Hu7EeujD-aVJQt_jA">
+    <impactModelElements xmi:id="_mj0boHvCEeujD-aVJQt_jA" name="Increase bandwidth efficiency" scalingFactor="1.0" offset="100.0" incoming="_RjTPEH-7EeuVOvqGkdCR9Q _JKKkcH-8EeuVOvqGkdCR9Q _VwLpwH-8EeuVOvqGkdCR9Q _WP4dgH-8EeuVOvqGkdCR9Q _dvm-cH-8EeuVOvqGkdCR9Q _mUABYH-8EeuVOvqGkdCR9Q _mo8WoH-8EeuVOvqGkdCR9Q _PmBYIH-9EeuVOvqGkdCR9Q _Us8OoH-9EeuVOvqGkdCR9Q _VDOAoH-9EeuVOvqGkdCR9Q"/>
+    <impactModelElements xmi:id="_XZ7O4HvDEeujD-aVJQt_jA" name="Increase memory efficiency" scalingFactor="1.0" offset="100.0" incoming="_88xucH-jEeuM0Zln53GCAQ __xBXsH-jEeuM0Zln53GCAQ _ORLOcH-kEeuM0Zln53GCAQ _i5qVYH-kEeuM0Zln53GCAQ _jxTIAH-kEeuM0Zln53GCAQ _ndMyAH-kEeuM0Zln53GCAQ _n-ln0H-kEeuM0Zln53GCAQ _D3yjUH-lEeuM0Zln53GCAQ"/>
+    <impactModelElements xmi:id="_cly20HvDEeujD-aVJQt_jA" name="Increase accuracy of cache"/>
+    <impactModelElements xsi:type="core:COREFeatureImpactNode" xmi:id="_wmN24H-iEeuM0Zln53GCAQ" name="CacheExpiry" scalingFactor="1.0" outgoing="_88xucH-jEeuM0Zln53GCAQ" represents="_wXgVgHu9EeujD-aVJQt_jA"/>
+    <impactModelElements xsi:type="core:COREFeatureImpactNode" xmi:id="_5J3dgH-jEeuM0Zln53GCAQ" name="GarbageCollector" scalingFactor="1.0" outgoing="__xBXsH-jEeuM0Zln53GCAQ" represents="_RsZdoHu-EeujD-aVJQt_jA"/>
+    <impactModelElements xsi:type="core:COREFeatureImpactNode" xmi:id="_Mz9pkH-kEeuM0Zln53GCAQ" name="OnDemandPruning" scalingFactor="1.0" outgoing="_ORLOcH-kEeuM0Zln53GCAQ" represents="_WoSv4Hu-EeujD-aVJQt_jA"/>
+    <impactModelElements xsi:type="core:COREFeatureImpactNode" xmi:id="_amiBkH-kEeuM0Zln53GCAQ" name="InvalidationStrategy" scalingFactor="1.0" outgoing="_i5qVYH-kEeuM0Zln53GCAQ" represents="_POlQAHvBEeujD-aVJQt_jA"/>
+    <impactModelElements xsi:type="core:COREFeatureImpactNode" xmi:id="_dAtlAH-kEeuM0Zln53GCAQ" name="OnDiskCaching" scalingFactor="1.0" outgoing="_ndMyAH-kEeuM0Zln53GCAQ" represents="_evjAUHu9EeujD-aVJQt_jA"/>
+    <impactModelElements xsi:type="core:COREFeatureImpactNode" xmi:id="_hGzQoH-kEeuM0Zln53GCAQ" name="InRAMCaching" scalingFactor="1.0" outgoing="_jxTIAH-kEeuM0Zln53GCAQ" represents="_gJ1NAHu9EeujD-aVJQt_jA"/>
+    <impactModelElements xsi:type="core:COREFeatureImpactNode" xmi:id="_h_a6sH-kEeuM0Zln53GCAQ" name="RemoteCaching" scalingFactor="1.0" outgoing="_n-ln0H-kEeuM0Zln53GCAQ" represents="_T3QTAHu7EeujD-aVJQt_jA"/>
+    <impactModelElements xsi:type="core:COREFeatureImpactNode" xmi:id="_DLmywH-lEeuM0Zln53GCAQ" name="CacheSize" scalingFactor="1.0" outgoing="_D3yjUH-lEeuM0Zln53GCAQ" represents="_MzqswHvBEeujD-aVJQt_jA"/>
+    <impactModelElements xsi:type="core:COREFeatureImpactNode" xmi:id="_6gMnMH-3EeuVOvqGkdCR9Q" name="CacheSize" scalingFactor="1.0" outgoing="_dvm-cH-8EeuVOvqGkdCR9Q" represents="_MzqswHvBEeujD-aVJQt_jA"/>
+    <impactModelElements xsi:type="core:COREFeatureImpactNode" xmi:id="_973c0H-3EeuVOvqGkdCR9Q" name="GarbageCollector" scalingFactor="1.0" outgoing="_mUABYH-8EeuVOvqGkdCR9Q" represents="_RsZdoHu-EeujD-aVJQt_jA"/>
+    <impactModelElements xsi:type="core:COREFeatureImpactNode" xmi:id="_-GCsgH-3EeuVOvqGkdCR9Q" name="InRAMCaching" scalingFactor="1.0" outgoing="_VwLpwH-8EeuVOvqGkdCR9Q" represents="_gJ1NAHu9EeujD-aVJQt_jA"/>
+    <impactModelElements xsi:type="core:COREFeatureImpactNode" xmi:id="_AWfFIH-4EeuVOvqGkdCR9Q" name="InvalidationStrategy" scalingFactor="1.0" outgoing="_PmBYIH-9EeuVOvqGkdCR9Q" represents="_POlQAHvBEeujD-aVJQt_jA"/>
+    <impactModelElements xsi:type="core:COREFeatureImpactNode" xmi:id="_CxXMIH-4EeuVOvqGkdCR9Q" name="OnDemandPruning" scalingFactor="1.0" outgoing="_mo8WoH-8EeuVOvqGkdCR9Q" represents="_WoSv4Hu-EeujD-aVJQt_jA"/>
+    <impactModelElements xsi:type="core:COREFeatureImpactNode" xmi:id="_DP3tEH-4EeuVOvqGkdCR9Q" name="OnDiskCaching" scalingFactor="1.0" outgoing="_JKKkcH-8EeuVOvqGkdCR9Q" represents="_evjAUHu9EeujD-aVJQt_jA"/>
+    <impactModelElements xsi:type="core:COREFeatureImpactNode" xmi:id="_Eho28H-4EeuVOvqGkdCR9Q" name="ReadStrategy" scalingFactor="1.0" outgoing="_Us8OoH-9EeuVOvqGkdCR9Q" represents="_0GSNAHvAEeujD-aVJQt_jA"/>
+    <impactModelElements xsi:type="core:COREFeatureImpactNode" xmi:id="_F6BmMH-4EeuVOvqGkdCR9Q" name="RemoteCaching" scalingFactor="1.0" outgoing="_WP4dgH-8EeuVOvqGkdCR9Q" represents="_T3QTAHu7EeujD-aVJQt_jA"/>
+    <impactModelElements xsi:type="core:COREFeatureImpactNode" xmi:id="_HGVBQH-4EeuVOvqGkdCR9Q" name="WriteStrategy" scalingFactor="1.0" outgoing="_VDOAoH-9EeuVOvqGkdCR9Q" represents="_xCaMUHvAEeujD-aVJQt_jA"/>
+    <impactModelElements xsi:type="core:COREFeatureImpactNode" xmi:id="_OVOwkH-7EeuVOvqGkdCR9Q" name="Caching" scalingFactor="1.0" outgoing="_RjTPEH-7EeuVOvqGkdCR9Q" represents="_HGvN4nu7EeujD-aVJQt_jA"/>
+    <impactModelElements xmi:id="_UBGBkIBHEeuBFOanQY5-Rg" name="Increase Speed" scalingFactor="1.0" offset="100.0" incoming="_RnQxgIBJEeuBFOanQY5-Rg _Tt2qkIBJEeuBFOanQY5-Rg _VIdnYIBJEeuBFOanQY5-Rg _guzi8IBKEeuBFOanQY5-Rg _j66SkIBKEeuBFOanQY5-Rg _3lJBgIBKEeuBFOanQY5-Rg _8t5EAIBKEeuBFOanQY5-Rg _HFETMIBLEeuBFOanQY5-Rg _HvqvYIBLEeuBFOanQY5-Rg _QyQxQIBLEeuBFOanQY5-Rg _UimPUIBLEeuBFOanQY5-Rg _VT5wcIBLEeuBFOanQY5-Rg"/>
+    <impactModelElements xsi:type="core:COREFeatureImpactNode" xmi:id="_sFiSAIBHEeuBFOanQY5-Rg" name="OnDemandPruning" scalingFactor="1.0" outgoing="_j66SkIBKEeuBFOanQY5-Rg" represents="_WoSv4Hu-EeujD-aVJQt_jA"/>
+    <impactModelElements xsi:type="core:COREFeatureImpactNode" xmi:id="_3kAD8IBIEeuBFOanQY5-Rg" name="LFUCaching" scalingFactor="1.0" outgoing="_VIdnYIBJEeuBFOanQY5-Rg" represents="_l0aNYHvBEeujD-aVJQt_jA"/>
+    <impactModelElements xsi:type="core:COREFeatureImpactNode" xmi:id="_3q_cwIBIEeuBFOanQY5-Rg" name="LRUCaching" scalingFactor="1.0" outgoing="_RnQxgIBJEeuBFOanQY5-Rg" represents="_VLvK8HvBEeujD-aVJQt_jA"/>
+    <impactModelElements xsi:type="core:COREFeatureImpactNode" xmi:id="_4Eyc0IBIEeuBFOanQY5-Rg" name="MRUCaching" scalingFactor="1.0" outgoing="_Tt2qkIBJEeuBFOanQY5-Rg" represents="_qfFMwHvBEeujD-aVJQt_jA"/>
+    <impactModelElements xsi:type="core:COREFeatureImpactNode" xmi:id="_BZo24IBKEeuBFOanQY5-Rg" name="GarbageCollector" scalingFactor="1.0" outgoing="_guzi8IBKEeuBFOanQY5-Rg" represents="_RsZdoHu-EeujD-aVJQt_jA"/>
+    <impactModelElements xsi:type="core:COREFeatureImpactNode" xmi:id="_2OpvsIBKEeuBFOanQY5-Rg" name="WriteBehind" scalingFactor="1.0" outgoing="_3lJBgIBKEeuBFOanQY5-Rg" represents="_iGRZoHu_EeujD-aVJQt_jA"/>
+    <impactModelElements xsi:type="core:COREFeatureImpactNode" xmi:id="_5PCXgIBKEeuBFOanQY5-Rg" name="WriteThroughCache" scalingFactor="1.0" outgoing="_8t5EAIBKEeuBFOanQY5-Rg" represents="_GJjskHu-EeujD-aVJQt_jA"/>
+    <impactModelElements xsi:type="core:COREFeatureImpactNode" xmi:id="_Cz-4gIBLEeuBFOanQY5-Rg" name="ReadAhead" scalingFactor="1.0" outgoing="_HFETMIBLEeuBFOanQY5-Rg" represents="_7clFIHvAEeujD-aVJQt_jA"/>
+    <impactModelElements xsi:type="core:COREFeatureImpactNode" xmi:id="_C86yEIBLEeuBFOanQY5-Rg" name="ReadThrough" scalingFactor="1.0" outgoing="_HvqvYIBLEeuBFOanQY5-Rg" represents="_eBofgHu_EeujD-aVJQt_jA"/>
+    <impactModelElements xsi:type="core:COREFeatureImpactNode" xmi:id="_NvBpwIBLEeuBFOanQY5-Rg" name="OnDiskCaching" scalingFactor="1.0" outgoing="_UimPUIBLEeuBFOanQY5-Rg" represents="_evjAUHu9EeujD-aVJQt_jA"/>
+    <impactModelElements xsi:type="core:COREFeatureImpactNode" xmi:id="_OSm38IBLEeuBFOanQY5-Rg" name="InRAMCaching" scalingFactor="1.0" outgoing="_VT5wcIBLEeuBFOanQY5-Rg" represents="_gJ1NAHu9EeujD-aVJQt_jA"/>
+    <impactModelElements xsi:type="core:COREFeatureImpactNode" xmi:id="_PXjGwIBLEeuBFOanQY5-Rg" name="RemoteCaching" scalingFactor="1.0" outgoing="_QyQxQIBLEeuBFOanQY5-Rg" represents="_T3QTAHu7EeujD-aVJQt_jA"/>
+    <layouts xmi:id="_mj0boXvCEeujD-aVJQt_jA" key="_mj0boHvCEeujD-aVJQt_jA">
+      <value xmi:id="_mj0bonvCEeujD-aVJQt_jA" key="_mj0boHvCEeujD-aVJQt_jA">
+        <value xmi:id="_mj0bo3vCEeujD-aVJQt_jA" x="709.00085" y="352.9999"/>
+      </value>
+      <value xmi:id="_6gMnMX-3EeuVOvqGkdCR9Q" key="_6gMnMH-3EeuVOvqGkdCR9Q">
+        <value xmi:id="_6gMnMn-3EeuVOvqGkdCR9Q" x="276.69324" y="549.9997"/>
+      </value>
+      <value xmi:id="_973c0X-3EeuVOvqGkdCR9Q" key="_973c0H-3EeuVOvqGkdCR9Q">
+        <value xmi:id="_973c0n-3EeuVOvqGkdCR9Q" x="512.5642" y="607.99994"/>
+      </value>
+      <value xmi:id="_-GCsgX-3EeuVOvqGkdCR9Q" key="_-GCsgH-3EeuVOvqGkdCR9Q">
+        <value xmi:id="_-GCsgn-3EeuVOvqGkdCR9Q" x="400.11627" y="142.99976"/>
+      </value>
+      <value xmi:id="_AWfsMH-4EeuVOvqGkdCR9Q" key="_AWfFIH-4EeuVOvqGkdCR9Q">
+        <value xmi:id="_AWfsMX-4EeuVOvqGkdCR9Q" x="146.9208" y="410.99994"/>
+      </value>
+      <value xmi:id="_CxXMIX-4EeuVOvqGkdCR9Q" key="_CxXMIH-4EeuVOvqGkdCR9Q">
+        <value xmi:id="_CxXMIn-4EeuVOvqGkdCR9Q" x="833.9452" y="607.9995"/>
+      </value>
+      <value xmi:id="_DP3tEX-4EeuVOvqGkdCR9Q" key="_DP3tEH-4EeuVOvqGkdCR9Q">
+        <value xmi:id="_DP3tEn-4EeuVOvqGkdCR9Q" x="229.42868" y="254.99957"/>
+      </value>
+      <value xmi:id="_Eho28X-4EeuVOvqGkdCR9Q" key="_Eho28H-4EeuVOvqGkdCR9Q">
+        <value xmi:id="_Eho28n-4EeuVOvqGkdCR9Q" x="1272.9205" y="412.99957"/>
+      </value>
+      <value xmi:id="_F6BmMX-4EeuVOvqGkdCR9Q" key="_F6BmMH-4EeuVOvqGkdCR9Q">
+        <value xmi:id="_F6BmMn-4EeuVOvqGkdCR9Q" x="759.5085" y="122.9996"/>
+      </value>
+      <value xmi:id="_HGVoUH-4EeuVOvqGkdCR9Q" key="_HGVBQH-4EeuVOvqGkdCR9Q">
+        <value xmi:id="_HGVoUX-4EeuVOvqGkdCR9Q" x="1044.3617" y="217.99945"/>
+      </value>
+      <value xmi:id="_OVOwkX-7EeuVOvqGkdCR9Q" key="_OVOwkH-7EeuVOvqGkdCR9Q">
+        <value xmi:id="_OVOwkn-7EeuVOvqGkdCR9Q" x="1166.6648" y="570.0001"/>
+      </value>
+    </layouts>
+    <layouts xmi:id="_clzd4HvDEeujD-aVJQt_jA" key="_cly20HvDEeujD-aVJQt_jA">
+      <value xmi:id="_clzd4XvDEeujD-aVJQt_jA" key="_cly20HvDEeujD-aVJQt_jA">
+        <value xmi:id="_clzd4nvDEeujD-aVJQt_jA" x="720.0" y="50.0"/>
+      </value>
+    </layouts>
+    <layouts xmi:id="_WGlJ0H-3EeuVOvqGkdCR9Q" key="_XZ7O4HvDEeujD-aVJQt_jA">
+      <value xmi:id="_WGm_AH-3EeuVOvqGkdCR9Q" key="_XZ7O4HvDEeujD-aVJQt_jA">
+        <value xmi:id="_WGm_AX-3EeuVOvqGkdCR9Q" x="720.0" y="50.0"/>
+      </value>
+      <value xmi:id="_WG7vIH-3EeuVOvqGkdCR9Q" key="_Mz9pkH-kEeuM0Zln53GCAQ">
+        <value xmi:id="_WG7vIX-3EeuVOvqGkdCR9Q" x="1177.5" y="150.0"/>
+      </value>
+      <value xmi:id="_WHIjcH-3EeuVOvqGkdCR9Q" key="_hGzQoH-kEeuM0Zln53GCAQ">
+        <value xmi:id="_WHIjcX-3EeuVOvqGkdCR9Q" x="1603.0" y="150.0"/>
+      </value>
+      <value xmi:id="_WHIjcn-3EeuVOvqGkdCR9Q" key="_DLmywH-lEeuM0Zln53GCAQ">
+        <value xmi:id="_WHIjc3-3EeuVOvqGkdCR9Q" x="2156.0" y="150.0"/>
+      </value>
+      <value xmi:id="_WHJKgH-3EeuVOvqGkdCR9Q" key="_h_a6sH-kEeuM0Zln53GCAQ">
+        <value xmi:id="_WHJKgX-3EeuVOvqGkdCR9Q" x="1983.0" y="150.0"/>
+      </value>
+      <value xmi:id="_WHJxkH-3EeuVOvqGkdCR9Q" key="_wmN24H-iEeuM0Zln53GCAQ">
+        <value xmi:id="_WHJxkX-3EeuVOvqGkdCR9Q" x="778.5" y="150.0"/>
+      </value>
+      <value xmi:id="_WHJxkn-3EeuVOvqGkdCR9Q" key="_amiBkH-kEeuM0Zln53GCAQ">
+        <value xmi:id="_WHJxk3-3EeuVOvqGkdCR9Q" x="1398.5" y="150.0"/>
+      </value>
+      <value xmi:id="_WHKYoH-3EeuVOvqGkdCR9Q" key="_5J3dgH-jEeuM0Zln53GCAQ">
+        <value xmi:id="_WHKYoX-3EeuVOvqGkdCR9Q" x="965.0" y="150.0"/>
+      </value>
+      <value xmi:id="_WHK_sH-3EeuVOvqGkdCR9Q" key="_dAtlAH-kEeuM0Zln53GCAQ">
+        <value xmi:id="_WHK_sX-3EeuVOvqGkdCR9Q" x="1791.0" y="150.0"/>
+      </value>
+    </layouts>
+    <layouts xmi:id="_UBId0IBHEeuBFOanQY5-Rg" key="_UBGBkIBHEeuBFOanQY5-Rg">
+      <value xmi:id="_UBJr8IBHEeuBFOanQY5-Rg" key="_UBGBkIBHEeuBFOanQY5-Rg">
+        <value xmi:id="_UBJr8YBHEeuBFOanQY5-Rg" x="690.99994" y="389.00003"/>
+      </value>
+      <value xmi:id="_sFi5EIBHEeuBFOanQY5-Rg" key="_sFiSAIBHEeuBFOanQY5-Rg">
+        <value xmi:id="_sFi5EYBHEeuBFOanQY5-Rg" x="513.8876" y="98.9996"/>
+      </value>
+      <value xmi:id="_3kAD8YBIEeuBFOanQY5-Rg" key="_3kAD8IBIEeuBFOanQY5-Rg">
+        <value xmi:id="_3kAD8oBIEeuBFOanQY5-Rg" x="149.78384" y="449.99982"/>
+      </value>
+      <value xmi:id="_3rAD0IBIEeuBFOanQY5-Rg" key="_3q_cwIBIEeuBFOanQY5-Rg">
+        <value xmi:id="_3rAD0YBIEeuBFOanQY5-Rg" x="352.34686" y="719.9999"/>
+      </value>
+      <value xmi:id="_4Eyc0YBIEeuBFOanQY5-Rg" key="_4Eyc0IBIEeuBFOanQY5-Rg">
+        <value xmi:id="_4Eyc0oBIEeuBFOanQY5-Rg" x="674.6448" y="757.9998"/>
+      </value>
+      <value xmi:id="_BZpd8IBKEeuBFOanQY5-Rg" key="_BZo24IBKEeuBFOanQY5-Rg">
+        <value xmi:id="_BZpd8YBKEeuBFOanQY5-Rg" x="151.58948" y="256.99988"/>
+      </value>
+      <value xmi:id="_2OpvsYBKEeuBFOanQY5-Rg" key="_2OpvsIBKEeuBFOanQY5-Rg">
+        <value xmi:id="_2OpvsoBKEeuBFOanQY5-Rg" x="735.8864" y="91.99994"/>
+      </value>
+      <value xmi:id="_5PCXgYBKEeuBFOanQY5-Rg" key="_5PCXgIBKEeuBFOanQY5-Rg">
+        <value xmi:id="_5PCXgoBKEeuBFOanQY5-Rg" x="1002.5676" y="98.999695"/>
+      </value>
+      <value xmi:id="_Cz-4gYBLEeuBFOanQY5-Rg" key="_Cz-4gIBLEeuBFOanQY5-Rg">
+        <value xmi:id="_Cz-4goBLEeuBFOanQY5-Rg" x="993.98083" y="748.0001"/>
+      </value>
+      <value xmi:id="_C86yEYBLEeuBFOanQY5-Rg" key="_C86yEIBLEeuBFOanQY5-Rg">
+        <value xmi:id="_C86yEoBLEeuBFOanQY5-Rg" x="1176.2786" y="179.99954"/>
+      </value>
+      <value xmi:id="_NvBpwYBLEeuBFOanQY5-Rg" key="_NvBpwIBLEeuBFOanQY5-Rg">
+        <value xmi:id="_NvBpwoBLEeuBFOanQY5-Rg" x="1223.8408" y="453.99985"/>
+      </value>
+      <value xmi:id="_OSm38YBLEeuBFOanQY5-Rg" key="_OSm38IBLEeuBFOanQY5-Rg">
+        <value xmi:id="_OSm38oBLEeuBFOanQY5-Rg" x="1254.7904" y="323.00012"/>
+      </value>
+      <value xmi:id="_PXjt0IBLEeuBFOanQY5-Rg" key="_PXjGwIBLEeuBFOanQY5-Rg">
+        <value xmi:id="_PXjt0YBLEeuBFOanQY5-Rg" x="1182.8652" y="631.99994"/>
+      </value>
+    </layouts>
+    <contributions xmi:id="_88xucH-jEeuM0Zln53GCAQ" source="_wmN24H-iEeuM0Zln53GCAQ" impacts="_XZ7O4HvDEeujD-aVJQt_jA"/>
+    <contributions xmi:id="__xBXsH-jEeuM0Zln53GCAQ" source="_5J3dgH-jEeuM0Zln53GCAQ" impacts="_XZ7O4HvDEeujD-aVJQt_jA"/>
+    <contributions xmi:id="_ORLOcH-kEeuM0Zln53GCAQ" source="_Mz9pkH-kEeuM0Zln53GCAQ" impacts="_XZ7O4HvDEeujD-aVJQt_jA"/>
+    <contributions xmi:id="_i5qVYH-kEeuM0Zln53GCAQ" source="_amiBkH-kEeuM0Zln53GCAQ" impacts="_XZ7O4HvDEeujD-aVJQt_jA"/>
+    <contributions xmi:id="_jxTIAH-kEeuM0Zln53GCAQ" source="_hGzQoH-kEeuM0Zln53GCAQ" impacts="_XZ7O4HvDEeujD-aVJQt_jA"/>
+    <contributions xmi:id="_ndMyAH-kEeuM0Zln53GCAQ" source="_dAtlAH-kEeuM0Zln53GCAQ" impacts="_XZ7O4HvDEeujD-aVJQt_jA"/>
+    <contributions xmi:id="_n-ln0H-kEeuM0Zln53GCAQ" source="_h_a6sH-kEeuM0Zln53GCAQ" impacts="_XZ7O4HvDEeujD-aVJQt_jA"/>
+    <contributions xmi:id="_D3yjUH-lEeuM0Zln53GCAQ" source="_DLmywH-lEeuM0Zln53GCAQ" impacts="_XZ7O4HvDEeujD-aVJQt_jA"/>
+    <contributions xmi:id="_RjTPEH-7EeuVOvqGkdCR9Q" source="_OVOwkH-7EeuVOvqGkdCR9Q" impacts="_mj0boHvCEeujD-aVJQt_jA"/>
+    <contributions xmi:id="_JKKkcH-8EeuVOvqGkdCR9Q" source="_DP3tEH-4EeuVOvqGkdCR9Q" impacts="_mj0boHvCEeujD-aVJQt_jA"/>
+    <contributions xmi:id="_VwLpwH-8EeuVOvqGkdCR9Q" source="_-GCsgH-3EeuVOvqGkdCR9Q" impacts="_mj0boHvCEeujD-aVJQt_jA"/>
+    <contributions xmi:id="_WP4dgH-8EeuVOvqGkdCR9Q" source="_F6BmMH-4EeuVOvqGkdCR9Q" impacts="_mj0boHvCEeujD-aVJQt_jA"/>
+    <contributions xmi:id="_dvm-cH-8EeuVOvqGkdCR9Q" source="_6gMnMH-3EeuVOvqGkdCR9Q" impacts="_mj0boHvCEeujD-aVJQt_jA"/>
+    <contributions xmi:id="_mUABYH-8EeuVOvqGkdCR9Q" source="_973c0H-3EeuVOvqGkdCR9Q" impacts="_mj0boHvCEeujD-aVJQt_jA"/>
+    <contributions xmi:id="_mo8WoH-8EeuVOvqGkdCR9Q" source="_CxXMIH-4EeuVOvqGkdCR9Q" impacts="_mj0boHvCEeujD-aVJQt_jA"/>
+    <contributions xmi:id="_PmBYIH-9EeuVOvqGkdCR9Q" source="_AWfFIH-4EeuVOvqGkdCR9Q" impacts="_mj0boHvCEeujD-aVJQt_jA"/>
+    <contributions xmi:id="_Us8OoH-9EeuVOvqGkdCR9Q" source="_Eho28H-4EeuVOvqGkdCR9Q" impacts="_mj0boHvCEeujD-aVJQt_jA"/>
+    <contributions xmi:id="_VDOAoH-9EeuVOvqGkdCR9Q" source="_HGVBQH-4EeuVOvqGkdCR9Q" impacts="_mj0boHvCEeujD-aVJQt_jA"/>
+    <contributions xmi:id="_RnQxgIBJEeuBFOanQY5-Rg" source="_3q_cwIBIEeuBFOanQY5-Rg" impacts="_UBGBkIBHEeuBFOanQY5-Rg"/>
+    <contributions xmi:id="_Tt2qkIBJEeuBFOanQY5-Rg" source="_4Eyc0IBIEeuBFOanQY5-Rg" impacts="_UBGBkIBHEeuBFOanQY5-Rg"/>
+    <contributions xmi:id="_VIdnYIBJEeuBFOanQY5-Rg" source="_3kAD8IBIEeuBFOanQY5-Rg" impacts="_UBGBkIBHEeuBFOanQY5-Rg"/>
+    <contributions xmi:id="_guzi8IBKEeuBFOanQY5-Rg" source="_BZo24IBKEeuBFOanQY5-Rg" impacts="_UBGBkIBHEeuBFOanQY5-Rg"/>
+    <contributions xmi:id="_j66SkIBKEeuBFOanQY5-Rg" source="_sFiSAIBHEeuBFOanQY5-Rg" impacts="_UBGBkIBHEeuBFOanQY5-Rg"/>
+    <contributions xmi:id="_3lJBgIBKEeuBFOanQY5-Rg" source="_2OpvsIBKEeuBFOanQY5-Rg" impacts="_UBGBkIBHEeuBFOanQY5-Rg"/>
+    <contributions xmi:id="_8t5EAIBKEeuBFOanQY5-Rg" source="_5PCXgIBKEeuBFOanQY5-Rg" impacts="_UBGBkIBHEeuBFOanQY5-Rg"/>
+    <contributions xmi:id="_HFETMIBLEeuBFOanQY5-Rg" source="_Cz-4gIBLEeuBFOanQY5-Rg" impacts="_UBGBkIBHEeuBFOanQY5-Rg"/>
+    <contributions xmi:id="_HvqvYIBLEeuBFOanQY5-Rg" source="_C86yEIBLEeuBFOanQY5-Rg" impacts="_UBGBkIBHEeuBFOanQY5-Rg"/>
+    <contributions xmi:id="_QyQxQIBLEeuBFOanQY5-Rg" source="_PXjGwIBLEeuBFOanQY5-Rg" impacts="_UBGBkIBHEeuBFOanQY5-Rg"/>
+    <contributions xmi:id="_UimPUIBLEeuBFOanQY5-Rg" source="_NvBpwIBLEeuBFOanQY5-Rg" impacts="_UBGBkIBHEeuBFOanQY5-Rg"/>
+    <contributions xmi:id="_VT5wcIBLEeuBFOanQY5-Rg" source="_OSm38IBLEeuBFOanQY5-Rg" impacts="_UBGBkIBHEeuBFOanQY5-Rg"/>
+  </impactModel>
+</core:COREConcern>
